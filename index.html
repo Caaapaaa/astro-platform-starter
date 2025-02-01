@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M. Caaapaaa - LinkTree</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: black;
+      position: relative;
+      color: white;
+      flex-direction: column;
+    }
+
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+      animation: gradientAnimation 6s infinite alternate;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, rgba(0, 0, 0, 0.9) 80%);
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .profile-pic {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid white;
+      object-fit: cover;
+    }
+
+    .discord-box {
+      display: block;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #2C2F33;
+      border-radius: 15px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .discord-box:hover {
+      background-color: #7289DA;
+      box-shadow: 0 0 15px 5px rgba(114, 137, 218, 0.8);
+      transform: scale(1.05);
+    }
+
+    .color-selector {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .color-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid white;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background" id="background"></div>
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="profile-container">
+      <img src="https://cdn.discordapp.com/avatars/1243911915651072060/4e53ab584b5fe538d228c4fca35d1cc4.png?size=512" alt="Profile Picture" class="profile-pic">
+    </div>
+    <h1>M. Caaapaaa</h1>
+    <a href="https://discord.gg/knnvhyauM5" class="discord-box" target="_blank">War Tycoon | Magnat de la guerre | Communauté FR</a>
+    <a href="https://discord.gg/M5bgxMgMBb" class="discord-box" target="_blank">A.T.S Armée Tactique de Sniper</a>
+    <a href="https://discord.gg/pHDBXQdETK" class="discord-box" target="_blank">Secoure de France RP</a>
+    <div class="color-selector">
+      <div class="color-circle" style="background: blue;" onclick="changeBackground('#0000ff')"></div>
+      <div class="color-circle" style="background: purple;" onclick="changeBackground('#800080')"></div>
+      <div class="color-circle" style="background: green;" onclick="changeBackground('#008000')"></div>
+      <div class="color-circle" style="background: orange;" onclick="changeBackground('#ffa500')"></div>
+      <div class="color-circle" style="background: red;" onclick="changeBackground('#ff0000')"></div>
+      <div class="color-circle" style="background: yellow;" onclick="changeBackground('#ffff00')"></div>
+    </div>
+  </div>
+
+  <div class="footer">©2025 copyright Dev4Ever Studio & <a href="https://linktree-cscpacman.netlify.app/">csc.pacman</a></div>
+
+  <script>
+    function changeBackground(color) {
+      document.getElementById('background').style.background = color;
+    }
+  </script>
+</body>
+
+</html>
